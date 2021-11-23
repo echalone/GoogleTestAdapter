@@ -1,6 +1,6 @@
 @echo off
  
-set VS_LOCATION=C:\Program Files\Microsoft Visual Studio\2022\Community
+set VS_LOCATION=C:\Program Files\Microsoft Visual Studio\2022\Enterprise
 set DIA_SDK="%VS_LOCATION%\DIA SDK\bin"
 set VC_VARS_BAT="%VS_LOCATION%\VC\Auxiliary\Build\vcvars64.bat"
 set MS_BUILD="%VS_LOCATION%\MSBuild\Current\Bin\MSBuild.exe"
