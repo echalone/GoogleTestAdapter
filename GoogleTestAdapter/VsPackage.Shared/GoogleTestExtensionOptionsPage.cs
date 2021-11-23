@@ -27,7 +27,7 @@ namespace GoogleTestAdapter.VsPackage
 {
 
     [AsyncPackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [Microsoft.VisualStudio.AsyncPackageHelpers.ProvideAutoLoad(VSConstants.UICONTEXT.NoSolution_string, PackageAutoLoadFlags.BackgroundLoad)]
+    [Microsoft.VisualStudio.AsyncPackageHelpers.ProvideAutoLoad(VSConstants.UICONTEXT.NoSolution_string, Microsoft.VisualStudio.AsyncPackageHelpers.PackageAutoLoadFlags.BackgroundLoad)]
     [PackageRegistration(UseManagedResourcesOnly = true)]
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)] // Info on this package for Help/About
     [Guid(PackageGuidString)]
@@ -70,8 +70,8 @@ namespace GoogleTestAdapter.VsPackage
             }
         }
 
-        IVsTask IAsyncLoadablePackageInitialize.Initialize(IAsyncServiceProvider serviceProvider, IProfferAsyncService profferService,
-            IAsyncProgressCallback progressCallback)
+        IVsTask IAsyncLoadablePackageInitialize.Initialize(Microsoft.VisualStudio.Shell.Interop.COMAsyncServiceProvider.IAsyncServiceProvider serviceProvider,
+            IProfferAsyncService profferService, IAsyncProgressCallback progressCallback)
         {
             if (!_isAsyncLoadSupported)
             {
